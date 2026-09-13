@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'dart:math';
 
+const numberOfTries =3
 void main() {
   var intValue = Random().nextInt(100) + 1;
   int trials = 10;
@@ -24,14 +25,14 @@ void main() {
         trials -= 1;
       }
     } else {
-      print("Even after three tries no number was guessed. Bye");
+      print("Even after ${numberOfTries} tries no number was guessed. Bye");
       break;
     }
   }
 }
 
 int? getUserInput() {
-  int trials = 3;
+  int trials = numberOfTries;
   while (trials >= 1) {
     print("Guess a number between 1 and 100:");
     String? userinput = stdin.readLineSync();
